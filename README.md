@@ -32,6 +32,7 @@ The project includes five main tables:
 This project is split into three tiers of questions to test SQL skills of increasing complexity:
 
 # Easy to Medium
+
 1. Find the number of stores in each country.
 ```sql
 SELECT 
@@ -41,6 +42,7 @@ FROM stores
 GROUP BY 1
 ORDER BY 2 DESC
 ```
+
 2. Calculate the total number of units sold by each store.
 ```sql
 SELECT 
@@ -54,6 +56,7 @@ ON st.store_id = s.store_id
 GROUP BY 1, 2
 ORDER BY 3 DESC
 ```
+
 3. Identify how many sales occurred in December 2023.
 ```sql
 SELECT 
@@ -61,6 +64,7 @@ SELECT
 FROM sales
 WHERE TO_CHAR(sale_date, 'MM-YYYY') = '12-2023'
 ```
+
 4. Determine how many stores have never had a warranty claim filed.
 ```sql
 SELECT COUNT(*) FROM stores
@@ -72,6 +76,7 @@ WHERE store_id NOT IN (
 						ON s.sale_id = w.sale_id
 						);
 ```
+
 5. Calculate the percentage of warranty claims marked as "Warranty Void".
 ```sql
 SELECT 
@@ -83,6 +88,7 @@ SELECT
 FROM warranty
 WHERE repair_status = 'Warranty Void'
 ```
+
 6. Identify which store had the highest total units sold in the last year.
 ```sql
 SELECT 
@@ -97,6 +103,7 @@ GROUP BY 1, 2
 ORDER BY 3 DESC
 LIMIT 1
 ```
+
 7. Count the number of unique products sold in the last year.
 ```sql
 SELECT 
@@ -104,6 +111,7 @@ SELECT
 FROM sales
 WHERE sale_date >= (CURRENT_DATE - INTERVAL '2 year')
 ```
+
 8. Find the average price of products in each category.
 ```sql
 SELECT 
@@ -117,6 +125,7 @@ ON p.category_id = c.category_id
 GROUP BY 1, 2
 ORDER BY 3 DESC
 ```
+
 9. How many warranty claims were filed in 2020?
 ```sql
 SELECT 
@@ -124,6 +133,7 @@ SELECT
 FROM warranty
 WHERE EXTRACT(YEAR FROM claim_date) = 2020
 ```
+
 10. For each store, identify the best-selling day based on highest quantity sold.
 ```sql
 SELECT  * 
@@ -141,6 +151,7 @@ WHERE rank = 1
 ```
 
 # Medium to Hard
+
 11. Identify the least selling product in each country for each year based on total units sold.
 ```sql
 WITH product_rank
@@ -165,6 +176,7 @@ SELECT
 FROM product_rank
 WHERE rank = 1
 ```
+
 12. Calculate how many warranty claims were filed within 180 days of a product sale.
 ```sql
 SELECT 
@@ -176,6 +188,7 @@ ON s.sale_id = w.sale_id
 WHERE 
 	w.claim_date - sale_date <= 180
 ```
+
 13.  Determine how many warranty claims were filed for products launched in the last three years.
 ```sql
 SELECT 
@@ -192,6 +205,7 @@ WHERE p.launch_date >= CURRENT_DATE - INTERVAL '3 years'
 GROUP BY 1
 HAVING COUNT(w.claim_id) > 0
 ```
+
 14. List the months in the last three years where sales exceeded 5,000 units in the USA.
 ```sql
 SELECT 
@@ -208,6 +222,7 @@ WHERE
 GROUP BY 1
 HAVING SUM(s.quantity) > 5000
 ```
+
 15. Identify the product category with the most warranty claims filed in the last two years.
 ```sql
 SELECT 
@@ -228,6 +243,7 @@ GROUP BY 1
 ```
 
 # Complex
+
 16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
 ```sql
 SELECT 
@@ -250,6 +266,7 @@ ON w.sale_id = s.sale_id
 GROUP BY 1) t1
 ORDER BY 4 DESC
 ```
+
 17. Analyze the year-by-year growth ratio for each store.
 ```sql
 WITH yearly_sales
@@ -295,6 +312,7 @@ WHERE
 	AND 
 	YEAR <> EXTRACT(YEAR FROM CURRENT_DATE)
 ```
+
 18. Calculate the correlation between product price and warranty claims for products sold in the last five years, segmented by price range.
 ```sql
 SELECT 
@@ -315,6 +333,7 @@ ON p.product_id = s.product_id
 WHERE claim_date >= CURRENT_DATE - INTERVAL '5 year'
 GROUP BY 1
 ```
+
 19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
 ```sql
 WITH paid_repair
@@ -354,6 +373,7 @@ ON pr.store_id = tr.store_id
 JOIN stores as st
 ON tr.store_id = st.store_id
 ```
+
 20. Write a query to calculate the monthly total of sales for each store.
 ```sql
 WITH monthly_sales
@@ -380,6 +400,7 @@ FROM monthly_sales
 ```
 
 # Bonus Question:
+
 21. Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months, 12-18 months, and beyond 18 months.
 ```sql
 SELECT 
