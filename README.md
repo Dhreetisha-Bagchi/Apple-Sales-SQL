@@ -228,7 +228,7 @@ GROUP BY 1
 ```
 
 # Complex
-16. Determine the percentage chance of receiving warranty claims after each purchase for each country!
+16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
 ```sql
 SELECT 
 	country,
@@ -295,7 +295,7 @@ WHERE
 	AND 
 	YEAR <> EXTRACT(YEAR FROM CURRENT_DATE)
 ```
-18. Calculate the correlation between product price and warranty claims for
+18. Calculate the correlation between product price and warranty claims for products sold in the last five years, segmented by price range.
 ```sql
 SELECT 
 	
@@ -315,7 +315,7 @@ ON p.product_id = s.product_id
 WHERE claim_date >= CURRENT_DATE - INTERVAL '5 year'
 GROUP BY 1
 ```
-19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed
+19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
 ```sql
 WITH paid_repair
 AS
@@ -354,7 +354,7 @@ ON pr.store_id = tr.store_id
 JOIN stores as st
 ON tr.store_id = st.store_id
 ```
-20. Write a query to calculate the monthly running total of sales for each store
+20. Write a query to calculate the monthly total of sales for each store.
 ```sql
 WITH monthly_sales
 AS
