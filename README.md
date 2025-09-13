@@ -1,15 +1,15 @@
-### Apple Retail Sales- SQL
+### Apple Retail Sales SQL Project 
 
 ---
 
-# ![Apple Logo](https://github.com/Dhreetisha-Bagchi/Apple-Sales-SQL/blob/main/Apple%20conv.jpeg)  
-# Apple Retail Sales SQL Project  
-
 ## Project Overview  
 
-This project analyzes over **1 million rows** of Apple retail sales data using **advanced SQL techniques**. It covers key insights on **sales trends, product performance, store analysis, and warranty claims** across various Apple locations. The project demonstrates SQL proficiency in **joins, window functions, aggregations, and query optimization** for large-scale datasets.  
+This project analyzes over **1 million rows** of Apple retail sales data using **advanced SQL techniques**. It covers key insights on **sales trends, product performance, store analysis, and warranty claims** across various Apple locations. The project demonstrates SQL proficiency in **joins, window functions, aggregations, and query optimization** for large-scale datasets.
 
-## Database Schema  
+# ![Apple Logo](https://github.com/Dhreetisha-Bagchi/Apple-Sales-SQL/blob/main/Apple%20conv.jpeg)  
+ 
+
+  ## Database Schema  
 
 The project includes five main tables:  
 
