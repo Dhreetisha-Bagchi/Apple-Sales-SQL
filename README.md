@@ -2,7 +2,7 @@
 
 ---
 
-## Project Overview  
+## 🎯Project Overview  
 
 This project analyzes over **1 million rows** of Apple retail sales data using **advanced SQL techniques**. It covers key insights on **sales trends, product performance, store analysis, and warranty claims** across various Apple locations. The project demonstrates SQL proficiency in **joins, window functions, aggregations, and query optimization** for large-scale datasets.
 
