@@ -425,7 +425,3 @@ ORDER BY 1, 3 DESC
 
 
 
-## Conclusion  
-
-This project is a **real-world SQL case study**, ideal for data professionals looking to strengthen SQL skills and work with large datasets. It demonstrates **data-driven decision-making** and query optimization for **business analytics**. 
-
